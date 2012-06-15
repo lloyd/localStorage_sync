@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var express = require('express'),
+         pp = require('postprocess'); 
+
+
+express.createServer()
+    .use(express.logger())
+    .use(pp(function(req, buf) {
+      var host = req.headers.host.split(':')[0];
+      var u = 'http://' + host + ":8200";
+      var re = new RegExp('http://third_party.com', 'g');
+      return buf.replace(re, u);
+    }))
+    .use(express.static("./site"))
+    .listen(8080);
+
+express.createServer()
+    .use(express.logger())
+    .use(express.static("./third_party"))
+    .listen(8200);

@@ -1,0 +1,13 @@
+{
+  "name": "local_storage_sync",
+  "description": "reproducing IE8 local storage sync issues",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.0",
+    "postprocess": "*"
+  },
+  "scripts": {
+    "start": "node webserver.js"
+  }
+}

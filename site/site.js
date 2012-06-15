@@ -10,7 +10,7 @@ $(function() {
     var iframe = $("<iframe>");
     iframe.attr({
       id: 'third_party_iframe',
-      src: 'http://10.246.29.67:8080/iframe.html',
+      src: 'http://third_party.com/iframe.html',
       width: "400",
       height: "300",
       border: "0"
@@ -25,12 +25,11 @@ $(function() {
     var windowOpenOpts = "menubar=0,location=1,resizable=1,scrollbars=1,status=0,dialog=1,width=400,height=200";
 
     WinChan.open({
-      url: 'http://10.246.29.67:8080/dialog.html',
-      relay_url: "http://10.246.29.67:8080/relay.html",
+      url: 'http://third_party.com/dialog.html',
+      relay_url: "http://third_party.com/relay.html",
       window_features: windowOpenOpts
     }, function(err, r) {
 
     });;
   });
 });
-
